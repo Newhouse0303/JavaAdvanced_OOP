@@ -9,7 +9,11 @@ class BusPaymentSystem
 
 class UserRegistry
 
-    This skeleton of a class used to create user accounts and manage storing them in the database, which would most probably be in .json format and the users and cards would be easily accessed by theis IDs. This class includes methods to create and delete users, to update info, to create, activate and deactivate cards. Strong identification upon aqcuiring travel cards is the new norm so this class would need secure methods to handle personal information and banking transactions.
+    This skeleton of a class used to create user accounts and manage storing them in the database, 
+    which would most probably be in .json format and the users and cards would be easily accessed by theis IDs. 
+    This class includes methods to create and delete users, to update info, to create, activate and deactivate cards. 
+    Strong identification upon aqcuiring travel cards is the new norm so this class would need secure 
+    methods to handle personal information and banking transactions.
 
     Method: createUser
     Method: deleteUser
@@ -48,7 +52,8 @@ class Card
     Meaning: updates travelTimeUntil and balance when a purcase is made
     Parameters: 'float price' and 'long duration'
     Preconditions; balance must be greater than price
-    Postconditions; substracts the price from balance using the setter, updates the TravelTimeValidUntil to (System.currentTimeMillis() + parameter 'duration')
+    Postconditions; substracts the price from balance using the setter, 
+    updates the TravelTimeValidUntil to (System.currentTimeMillis() + parameter 'duration')
     Exception: if balance is smaller than price throws NoBalanceException
 
     Method: balanceTopUp
@@ -76,10 +81,14 @@ class Purchase
 
 class CardReader
 
-    The CardReader objects serve as an interfaces between the application and individual cards. There are numerous card readers which are stored in a database. The below method 'greenLight' checks is any of the conditions that grant access to the bus are fulfilled.
+    The CardReader objects serve as an interfaces between the application and individual cards. 
+    There are numerous card readers which are stored in a database. The below method 'greenLight' 
+    checks is any of the conditions that grant access to the bus are fulfilled.
 
     Method: greenLight
-    Meaning: calls 'cardStatus' (and informs user if card is deactivated). Calls 'validTravelTimeLeft' and indicates if there is transfer time left on the card (green light). If not, calls 'travelTypeInput' which calls 'getPriceAndDuration'. If there is balance left on the card, 'payment' is called and user gains acccess.
+    Meaning: calls 'cardStatus' (and informs user if card is deactivated). Calls 'validTravelTimeLeft' 
+    and indicates if there is transfer time left on the card (green light). If not, calls 'travelTypeInput' 
+    which calls 'getPriceAndDuration'. If there is balance left on the card, 'payment' is called and user gains acccess.
 
 
     Method: 'cardStatus'
@@ -90,7 +99,8 @@ class CardReader
     Exception: if cardID is not valid, throws IllegalArgumentException
 
     Method: 'validTravelTimeLeft'
-    Meaning: checks if the card has some valid travel time by checking if card travelTimeValidUntil is greater than current time (via System.currentTimeMillis())
+    Meaning: checks if the card has some valid travel time by checking if card travelTimeValidUntil 
+    is greater than current time (via System.currentTimeMillis())
     Parameter: String cardID
     Precondition: card is activated
     Postcondition: returns boolean
@@ -108,5 +118,5 @@ class CardReader
     Exception: if their's no balance left throws an NoBlanceException
 
     Method: 'payment'
-    Meaning: calls 'getPriceAndDuration' and the Card class's makePurcase methods to to update the card attributes 'balance' and 'travelTimeValiduntil'
+    Meaning: calls 'getPriceAndDuration' and the Card class's makePurcase methods to update the card attributes 'balance' and 'travelTimeValiduntil'
     Parameters: String cardID, 'float price' and 'long duration' (via Purchase object)
