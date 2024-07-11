@@ -7,6 +7,8 @@ class BusPaymentSystem
     Meaning: Application entry point
     Postcondition: executes program
 
+    Method: something to create an instance of UserRegistry, cardReaders etc. 
+
 class UserRegistry
 
     This skeleton of a class used to create user accounts and manage storing them in the database, 
