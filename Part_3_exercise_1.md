@@ -16,3 +16,8 @@ If other natural resources were to be included in the comparison perhaps a diffe
 
 Similar chain would be created for non_renewables such as coal, oil and gas. Here the functionalities of the interface could be created with regular getters and setters in the `class NaturalReasource`. The `Exception("Renewable is limitless!")` would be a feature of `class RenewableResource` 
 
+## exercise 1 / c
+
+The super class seems unnecessarily complicated. In terms of typecasting, randomized type of return seems problematic, for instance if the client is prepared to receive an Integer but not a String. Also the hardcoded `switch` cases are not very flexible. 
+
+Perhaps a sort of  `RandomTypeGenerator` could do just the type lottery and then the program would proceed to engage separate classes `RandomIntegerGenerator`, `RandomStringGenerator` and `RandomObjectGenerator` accordingly. This would help to avoid type conflicts and also offer an easier way to modify and maintain the output in different cases. 
