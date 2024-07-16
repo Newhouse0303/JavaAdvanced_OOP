@@ -16,6 +16,7 @@ If other natural resources were to be included in the comparison perhaps a diffe
 
 Similar chain would be created for non_renewables such as coal, oil and gas. Here the functionalities of the interface could be created with regular getters and setters in the `class NaturalReasource`. The `Exception("Renewable is limitless!")` would be a feature of `class RenewableResource` 
 
+test
 
 
 
