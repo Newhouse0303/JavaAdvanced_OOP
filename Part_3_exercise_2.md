@@ -1,0 +1,5 @@
+## exercise 2 / a 
+
+Inheritance is shown in the way `Problem` extends `Exception`, which itself extends `Throwable` showing the hierarchy of classes. `abstaract class problem` doesn't have any instances, but it morphs into two subclasses `WeirdProblem` and `TrickyProblem`, which inherit from all the above superclasses. 
+
+The program seems to be designed exception-proof. `Experiment` throws two specific Exceptions and provides cases for each, which are then caught in the `main`. `Experiment2` throws a Problem, which doesn't have any instances, but as `WeirdProblem` and `TrickyProblem` are instances of it's subclasses, they don't necessarily have to be defined seaprately as in `Experiment`. To assure efficient exception handling, the the  `catch (Problem w)` in the `main` covers both specific exceptions leaving no room for error. However, using the more generic Problem exception might not provide as much information on the nature of the exception.
