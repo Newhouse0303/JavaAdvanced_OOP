@@ -10,9 +10,9 @@ The `interface NaturalResource` seems a little redundant. `float Amountleft()`is
 
 If other natural resources were to be included in the comparison perhaps a different logic alltogether would be clearer e.g. 
 
-class NaturalResource 
-class RenewableResource extends NaturalResource 
-class Hydroelectric extends RenewableRecourse 
+- class NaturalResource 
+- class RenewableResource extends NaturalResource 
+- class Hydroelectric extends RenewableRecourse 
 
 And the same for NonRenewable - Coal etc. Here the functionalities of the interface could be created with regular getters and setters in the `class NaturalReasource`. The limitless Exception would be a feature of `class RenewableResource` 
 
