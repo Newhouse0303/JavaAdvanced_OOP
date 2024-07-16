@@ -14,7 +14,7 @@ If other natural resources were to be included in the comparison perhaps a diffe
 - class RenewableResource extends NaturalResource 
 - class Hydroelectric extends RenewableRecourse 
 
-And the same for NonRenewable - Coal etc. Here the functionalities of the interface could be created with regular getters and setters in the `class NaturalReasource`. The limitless Exception would be a feature of `class RenewableResource` 
+And the same for NonRenewable - Coal etc. Here the functionalities of the interface could be created with regular getters and setters in the `class NaturalReasource`. The `Exception("Renewable is limitless!")` would be a feature of `class RenewableResource` 
 
 
 
