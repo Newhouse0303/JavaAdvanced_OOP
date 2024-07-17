@@ -10,11 +10,18 @@ Temperatures could be represented through abstract super class `Scale`, which wo
 
 Research and registering of new diseases is a long process, so there would be a super class `Disease` with fields `name` and `symptoms`. It would have three subclasses. One for emerging and fairly unknown diseases which might go by a temporary name, but would have some recognisable sympton patterns that have caucht researchers' attention. Another for recognised diseases and third for fully established diseases. 
 
-Without any context it is difficult to imagine how the Human object is engaged in the scenario, maybe 
-
+Without any context it is difficult to imagine how the Human object is engaged in the scenario, maybe Human object could call a disease methods to get a list of respective symptoms or cure. Maybe a Symptom interfaces which would have a list of nasty methods for the subclasses to implement.
 
 ## c:
+
+Class `retriveData` interacts with the database, creates Row objects and returns a list with createList method. 
+
+Class Row holds the row format, setters and getters for all the values:
+
+Class `StudentInfo` calls retrieveData's method createList.
  
 ## d:
+
+Class UserInterface 
 
 ## e:
