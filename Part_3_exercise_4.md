@@ -99,12 +99,76 @@ Without any context it is difficult to imagine how the Human object is engaged i
 
 ## c:
 
-Class `retriveData` interacts with the database, creates Row objects and returns a list with createList method. 
+We have a program with a search functionality to pass user input to the program. 
+The query is processed in the `studentQuery` class with the search condition 
+"present in 2023" assuming the database has a key `isPresent` with a boolean value,  and thet 2023 is the current year.
 
-Class Row holds the row format, setters and getters for all the values:
+```
+class retrieveData {
+    list<Row> results; 
 
-Class `StudentInfo` calls retrieveData's method createList.
-It has boolean filter(Row row) function.
+    public List[Row] search(String key, String value)
+        // performs a search
+        // turns credits into int
+        // then creates a new row object for each match 
+        // Row newRow = new Row( {...} ) // maybe assign an ascending number to each
+        // adds it to the list
+        // returns the list
+    }
+
+```
+
+```
+class studentQuery {
+    private List<Row> results;
+
+    public studentQuery(String key, String value) // isPresent, true
+        this.results = retrieveData(String key, String value;
+} 
+
+
+```
+
+```
+class Row {
+    private String name;
+    private String address;
+    private String email;
+    private String programme;
+    private int credits;
+
+     public Row(String name, String address, String email, String programme, int credits) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.programme = programme;
+        this.credits = credits;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getProgramme() {
+        return programme;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+
+}
+```
+
  
 ## d:
 
