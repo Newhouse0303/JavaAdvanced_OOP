@@ -133,8 +133,6 @@ class recognisedDisease extends Disease {}
 
 class establishedDisease extends Disease {}
 
-    
-
 ```
 
 ## c:
@@ -213,7 +211,7 @@ class Row {
 ## d:
 
 The filterResults takes two parameters (key, value) and filters through the initial list.
-The solution seems a bit dull and having avbig fat function `row.filter` which doesn't even accept two values as a parameter is just not ok.
+The solution seems a bit dull and having a big fat function `row.filter` which doesn't even accept two values as a parameter is just not ok.
  
 ```
 class studentQuery {
@@ -240,10 +238,6 @@ Method in the class Row:
         // checks whether both key and value match the query
         // returns boolean
     }
-
-
-    
-
 
 ```
 
