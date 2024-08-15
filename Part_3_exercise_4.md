@@ -6,6 +6,23 @@ Doing calculations with temperatures is tricky as Celsius and Fahrenheit have ne
 
 Temperatures could be represented through abstract super class `Scale`, which would have subclasses for each scale. It would have a method ´getValueInKelvin` which would return the said value. Each subclass would override it to apply the appropriate conversion formula. The same goes for ToString which would be modified to each classes' required output.
 
+```
+public abstract class Scale {
+    double temperature; 
+
+    public Scale(double temperature) {
+        this.temperature = temperature;
+    }
+
+    // temperature to Kelvin
+    public abstract double getValueInKelvin();
+
+    @Override
+    public abstract String toString();
+}
+
+```
+
 ## b:
 
 Research and registering of new diseases is a long process, so there would be a super class `Disease` with fields `name` and `symptoms`. It would have three subclasses. One for emerging and fairly unknown diseases which might go by a temporary name, but would have some recognisable sympton patterns that have caucht researchers' attention. Another for recognised diseases and third for fully established diseases. 
