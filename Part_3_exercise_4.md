@@ -22,6 +22,74 @@ public abstract class Scale {
 }
 
 ```
+```
+public class Celsius extends Scale {
+
+    public Celsius(double temperature) {
+        super(temperature);
+    }
+
+    @Override
+    public double getValueInKelvin() {
+        double kelvin = temperature + 273.15;
+        if (kelvin <= 0.0) {
+            throw Exception("Temperature in Kelvin must be greater than 0.0 K");
+        }
+        return kelvin;
+    }
+
+    @Override
+    public String toString() {
+        return temperature + " °C";
+    }
+}
+
+```
+```
+public class Fahrenheit extends Scale {
+
+    public Fahrenheit(double temperature) {
+        super(temperature);
+    }
+
+    @Override
+    public double getValueInKelvin() {
+        double kelvin = (temperature + 459.67) * 5/9;
+        if (kelvin <= 0.0) {
+            throw Exception("Temperature in Kelvin must be greater than 0.0 K");
+        }
+        return kelvin;
+    }
+
+    @Override
+    public String toString() {
+        return temperature + " °F";
+    }
+}
+
+```
+```
+public class Kelvin extends Scale {
+
+    public Kelvin(double temperature) {
+        super(temperature);
+        if (temperature <= 0.0) {
+            throw new Exception("Temperature in Kelvin must be greater than 0.0 K");
+        }
+    }
+
+    @Override
+    public double getValueInKelvin() {
+        return temperature;
+    }
+
+    @Override
+    public String toString() {
+        return temperature + " K";
+    }
+}
+
+```
 
 ## b:
 
