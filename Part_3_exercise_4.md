@@ -97,6 +97,46 @@ Research and registering of new diseases is a long process, so there would be a 
 
 Without any context it is difficult to imagine how the Human object is engaged in the scenario, maybe Human object could call a disease methods to get a list of respective symptoms or cure. Maybe a Symptom interfaces which would have a list of nasty methods for the subclasses to implement.
 
+```
+
+abstract class Disease {
+    String name;
+    List<Symptom> symptoms;
+
+    public Disease(String name, List<Symptom> symptoms) {
+        this.name = name;
+        this.symptoms = symptoms;
+    }
+
+
+class Symptom {
+    String category;    // respiratory, internal, pain, cognitive etc.
+    String duration;
+    String severity;
+    etc. 
+}
+
+class unrecognisedDisease extends Disease {
+    String location;
+    String timeOfDiscovery;
+    List<String> researchers;
+
+    public UnrecognisedDisease(String name, List<Symptom> symptoms, String location, String timeOfDiscovery, String researcher) {
+        super(name, symptoms); 
+        this.location = location;
+        this.timeOfDiscovery = timeOfDiscovery;
+        this.researcher = researcher;
+    }
+}
+
+class recognisedDisease extends Disease {}
+
+class establishedDisease extends Disease {}
+
+    
+
+```
+
 ## c:
 
 We have a program with a search functionality to pass user input to the program. 
@@ -172,7 +212,41 @@ class Row {
  
 ## d:
 
-Assuming the requests are made via command line or some other UI, class `User interface` handles user input and codes it to correspond with the index of the desired data on the row. The limit value for the boolean search is also acquired and these (data, limit) are passed to the filter function in `StudentInfo` as parameters, thus making it reusable. The class can be easily modified to accomodate more searches and or data input to update student info. In this case classes such as Filter or UpdateInfo might be in order. 
+The filterResults takes two parameters (key, value) and filters through the initial list.
+The solution seems a bit dull and having avbig fat function `row.filter` which doesn't even accept two values as a parameter is just not ok.
+ 
+```
+class studentQuery {
+    private List<Row> results;
+
+    public studentQuery(String key, String value) // isPresent, true
+        this.results = retrieveData(key, value)
+
+    public List<Row> filterResults(String key, String value) { 
+        return this.results.stream()
+                      .filter(row -> row.filter(key, value)
+                      .collect(Collectors.toList());
+    }
+
+   
+}
+```
+Method in the class Row: 
+
+```
+
+     filter boolean(String key, String value) {
+        // if value is number changes it to int
+        // checks whether both key and value match the query
+        // returns boolean
+    }
+
+
+    
+
+
+```
+
 
 ## e:
 
