@@ -1,5 +1,7 @@
 ## Part 4 Exercise 1
 
+HOX !!! more precise on naming the class constructs
+
 #A
 
 Zipper: 
@@ -47,6 +49,8 @@ Exercise 3:
 Exercise1 object is created to create TestZipper instance which will call parent class Zippers run() to eventually implement TestZipper class's versions of `class Handle` abstract methods: `createHandler()`and `handle()`.
 
 B#
+
+HOX!! reasoning on why the chosen class constructs are being used
 
 Zipper class provides the basic funtionality for file handling (retrieving, opening, reading, creating temp, closing) files. It how ever does not define how the data should be presented / dealt with, which is evident as the handle methods are abstract. Child class TestZipper overrides the abstract methods `createHandler()`and `handle()`. This way the Zipper class could be extended to serve numerous child classes spezialized in data presentation. The Exercise1 class remains tidy and if more Zipper subclasses were to be created only this line would have to be modified: 
 `try (var zipper = new {nameHolder}Zipper("books.zip"))`
